@@ -1,38 +1,220 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+body {
+  background-image: url(https://i.imgur.com/OfjimiH.png);
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.img-fluid {
+  width: 100%;
+}
+
+.btn {
+  padding: 14.5px 36.5px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #F9A826;
+  color: #FFF;
+  border: 1px solid #F9A826;
+  box-shadow: 0px 2px 4px rgba(252, 168, 47, 0.4);
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background: #FFF;
+  color: #F9A826;
+}
+
+.btn-outline-blue {
+  font-weight: bold;
+  border: 2px solid #1D355D;
+  background: #FFF;
+  color: #1D355D;
+}
+
+.btn-outline-blue:hover {
+  background: #1D355D;
+  color: #FFF;
+}
+
+#question-box {
+  width: 464px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 50px 20px;
+  position: relative;
+}
+
+#question-box .question-string {
+  color: #2F527B;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.answer-item {
+  color: rgba(96, 102, 208, 0.8);
+  background: #FFFFFF;
+  border: 2px solid rgba(96, 102, 208, 0.7);
+  border-radius: 12px;
+  padding: 14.5px 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.answer-item h5 {
+  font-size: 1.5rem;
+}
+
+.answer-item p {
+  text-align: left;
+  flex: 90%;
+  max-width: 90%;
+}
+
+.answer-item.incorrect p,
+.answer-item.correct p{
+  flex: 80%;
+  max-width: 80%;
+}
+
+.answer-item__icon {
+  padding-top: 5px;
+  display: none;
+}
+
+.answer-item:hover {
+  background: #F9A826;
+  color: #FFF;
+  border: 2px solid #F9A826;
+}
+
+.answer-item.correct {
+  background: #60BF88;
+  border: 2px solid #60BF88;
+  color: #FFF;
+}
+
+.answer-item.correct .answer-item__icon--correct {
+  display: block;
+}
+
+.answer-item.incorrect {
+  background: #EA8282;
+  border: 2px solid #EA8282;
+  color: #FFF;
+}
+
+.answer-item.incorrect .answer-item__icon--incorrect {
+  display: block;
+}
+
+#question-box .title {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  color: #F2F2F2;
+}
+
+#question-box .logo {
+  width: 162px;
+}
+
+.logo-container {
+  text-align: right;
+  position: absolute;
+  top: -70px;
+  right: 0;
+}
+
+.flag-image {
+  width: 84px;
+  height: 54px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.1));
+}
+
+.question-box__footer {
+  text-align: right;
+}
+
+.result-image-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.result-image-container img {
+  width: 238px;
+  height: 128.58px;
+}
+
+.result-container {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.result-container h2 {
+  font-size: 3rem;
+  color: #1D355D;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.result-container p {
+  color: #1D355D;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.result-container p span {
+  font-size: 2rem;
+  color:#60BF88;
+  font-weight: bold;
+}
+
+.result-container .btn-outline-blue {
+  padding: 17.5px 61px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  body {
+    padding-left: 10px;
+    padding-right: 10px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  #question-box {
+    width: 100%;
+    margin-top: 50px;
   }
-  to {
-    transform: rotate(360deg);
+
+  #question-box .title {
+    top: -120px;
+    left: 0;
+    text-align: center;
+    width: 100%;
   }
 }
